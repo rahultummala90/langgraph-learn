@@ -1,0 +1,11 @@
+- Pydantic Module
+    - Data validation
+    - Written in Rust
+
+- Langgraph basic concepts
+    - Graphs
+    - Nodes
+    - Functions
+
+- AI agents vs agentic AI
+- pip install -r requirements.txt
