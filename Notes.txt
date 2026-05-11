@@ -9,3 +9,5 @@
 
 - AI agents vs agentic AI
 - pip install -r requirements.txt
+
+- ReAct architecture

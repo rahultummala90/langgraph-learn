@@ -1,0 +1,70 @@
+Workflow
+========
+
+            ┌───────┐
+            │ START │
+            └───┬───┘
+                │
+                ▼
+                                          ┌───────────────┐
+       ┌────────────┐        ┌───────┐    │  Web Search   │
+       │ AI Assitant│◄──────►│ Tools │◄──►│  SQL Database │
+       └────────────┘        └───────┘    │  Vector DB    │
+                                          └───────────────┘
+                │
+                ▼
+            ┌─────┐
+            │ END │
+            └─────┘
+
+
+ReAct Architecture (Reasoning + Acting)
+========================================
+
+  ┌─────────────────────────────────────────────────────┐
+  │                      AGENT LOOP                     │
+  │                                                     │
+  │   ┌──────────┐    ┌──────────┐    ┌─────────────┐  │
+  │   │  REASON  │───►│   ACT    │───►│   OBSERVE   │  │
+  │   │          │    │ (call    │    │ (get tool   │  │
+  │   │ What do  │    │  tool)   │    │  result)    │  │
+  │   │ I do?    │    │          │    │             │  │
+  │   └──────────┘    └──────────┘    └──────┬──────┘  │
+  │        ▲                                 │         │
+  │        └─────────────────────────────────┘         │
+  │              loop until task complete               │
+  └─────────────────────────────────────────────────────┘
+                          │
+                          ▼ (done)
+                    final response
+
+
+Tool Call Flow
+==============
+
+  User Message
+       │
+       ▼
+  ┌──────────────────┐
+  │   LLM decides    │   ── no tool needed ──►  Final Answer
+  │   to call tool?  │
+  └────────┬─────────┘
+           │ yes
+           ▼
+  ┌──────────────────┐
+  │  Tool Call       │  { name: "search", args: { query: "..." } }
+  └────────┬─────────┘
+           │
+           ▼
+  ┌──────────────────┐
+  │  Tool Executes   │  hits data source, runs code, calls API
+  └────────┬─────────┘
+           │
+           ▼
+  ┌──────────────────┐
+  │  Result returned │  appended to message history
+  │  to LLM          │
+  └────────┬─────────┘
+           │
+           ▼
+       (back to LLM — may call more tools or return final answer)
