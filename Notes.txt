@@ -10,4 +10,6 @@
 - AI agents vs agentic AI
 - pip install -r requirements.txt
 
-- ReAct architecture
+- ReAct architecture - reasoning and acting
+- Arxiv - https://docs.langchain.com/oss/python/integrations/providers/arxiv
+
