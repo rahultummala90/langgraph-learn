@@ -4,12 +4,33 @@
 
 - Langgraph basic concepts
     - Graphs
-    - Nodes
-    - Functions
+    - Nodes | Functions
+    - State
+    - Edges
 
 - AI agents vs agentic AI
 - pip install -r requirements.txt
 
 - ReAct architecture - reasoning and acting
 - Arxiv - https://docs.langchain.com/oss/python/integrations/providers/arxiv
+- Tavily - https://app.tavily.com/
 
+- Fundamental Langgraph
+    - Graph API
+    - Basic Chatbot
+    - Toolsm Multiple Tools
+    - Adding Memory
+    - Human in the loop
+    - Streaming Techniques
+    - MCP
+
+- Advanced Langgraph
+    - Workflow and Agents | Agent 2 Agent
+    - Multi Agents
+    - Functional API  Graph API
+    - Debugging and Monitioring - Langsmith
+
+- Langgraph Agents
+    - LLM Ops Pipeline
+    - Deployments
+    - LLM Evaluation Metrics
